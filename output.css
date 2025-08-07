@@ -17,6 +17,8 @@
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
     --font-weight-normal: 400;
     --font-weight-bold: 700;
     --radius-xl: 0.75rem;
@@ -172,9 +174,6 @@
   }
 }
 @layer utilities {
-  .static {
-    position: static;
-  }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
   }
@@ -187,11 +186,8 @@
   .table {
     display: table;
   }
-  .h-\[95vh\] {
-    height: 95vh;
-  }
-  .w-56 {
-    width: calc(var(--spacing) * 56);
+  .h-\[90vh\] {
+    height: 90vh;
   }
   .w-58 {
     width: calc(var(--spacing) * 58);
@@ -201,12 +197,6 @@
   }
   .w-xs {
     width: var(--container-xs);
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .resize {
-    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -226,10 +216,6 @@
   .rounded-xl {
     border-radius: var(--radius-xl);
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
   .bg-slate-300 {
     background-color: var(--color-slate-300);
   }
@@ -244,6 +230,10 @@
   }
   .font-display {
     font-family: var(--font-display);
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
   }
   .text-sm {
     font-size: var(--text-sm);
@@ -267,35 +257,16 @@
   .text-slate-800 {
     color: var(--color-slate-800);
   }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
 }
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@100..900&family=Outfit:wght@100..900&display=swap');
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
     }
   }
 }
